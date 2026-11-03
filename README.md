@@ -75,7 +75,7 @@ Personal Resend takes priority; SMTP is used when no Resend key exists. `EMAIL_R
 | Variable | Required | Purpose |
 | --- | --- | --- |
 | `NEXT_PUBLIC_SUPABASE_URL` | Yes | Supabase project URL |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Yes | Supabase anon/public key |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Yes | Supabase anon/public key (or set `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` instead) |
 | `GEMINI_API_KEY` | Optional | Shared AI fallback; users can BYOK |
 | `GEMINI_MODEL` | No | Defaults to `gemini-2.5-flash` |
 | `RESEND_API_KEY` | Optional | Shared email fallback; users can BYOK |

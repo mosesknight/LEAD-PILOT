@@ -4,13 +4,17 @@ import { cookies } from "next/headers";
 
 export function isSupabaseServerConfigured() {
   return Boolean(
-    process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+    process.env.NEXT_PUBLIC_SUPABASE_URL &&
+      (process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ??
+        process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY),
   );
 }
 
 export async function getSupabaseServerClient(): Promise<SupabaseClient | null> {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  const anonKey =
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ??
+    process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
   if (!url || !anonKey) return null;
 
   const cookieStore = await cookies();

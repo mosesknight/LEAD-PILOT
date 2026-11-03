@@ -15,7 +15,7 @@ const steps = [
   {
     icon: KeyRound,
     title: "Add the Supabase keys",
-    body: "Copy .env.example to .env.local and fill in NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY.",
+    body: "Copy .env.example to .env.local and fill in NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY (or NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY).",
     link: "https://supabase.com/dashboard/project/_/settings/api",
     linkLabel: "Find your API keys",
   },
